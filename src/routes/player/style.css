@@ -1,0 +1,24 @@
+.profile {
+	padding: 71px 0 15px;
+	width: 100%;
+}
+
+.profile img{
+	width: 42px;
+	height: 42px;
+	border-radius: 5px;
+	border:2px solid #9a9e9b;
+	margin-left: 15px;
+}
+
+.profile h1{
+	margin-left: 15px;
+	font-size: 32px;
+	font-weight: 500;
+}
+
+.profile a{
+	text-decoration: none;
+	font-size: 22px;
+	color:#37d461;
+}
