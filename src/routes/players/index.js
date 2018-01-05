@@ -16,7 +16,7 @@ export default class Players extends Component {
 				matchesTextFilter.test(`${first_name} ${last_name} ${drafted_by}`)) {
 				return accum.concat(
 					(<Link class={style.card} href={`/players/${player.player_id}`}>
-						<img src={player.img_url}/>
+						{player.hasOwnProperty('img_url') && (<img src={player.img_url}/>)}
 						<div class={style.cardContent}>
 							<h2>{`${first_name} ${last_name}`}</h2>
 							<p>Born <strong>{player.date_of_birth}</strong></p>
