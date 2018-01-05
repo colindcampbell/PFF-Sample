@@ -7,7 +7,6 @@ import LoadingSpinner from '../../components/loading'
 export default class Players extends Component {
 	render({ players, filter, loading }, {}) {
 		if (loading) {
-			// TODO: make a loading indicator
 			return (<LoadingSpinner />)
 		}
 		const matchesTextFilter = new RegExp(filter, "i")
@@ -17,7 +16,7 @@ export default class Players extends Component {
 				matchesTextFilter.test(`${first_name} ${last_name} ${drafted_by}`)) {
 				return accum.concat(
 					(<Link class={style.card} href={`/players/${player.player_id}`}>
-						<img src={player.img_url}/>
+						{player.hasOwnProperty('img_url') && (<img src={player.img_url}/>)}
 						<div class={style.cardContent}>
 							<h2>{`${first_name} ${last_name}`}</h2>
 							<p>Born <strong>{player.date_of_birth}</strong></p>

@@ -31,7 +31,7 @@ export default class Player extends Component {
 
 	render({ player_id, players, loading }, { currentPlayer }) {
 		if (loading || !currentPlayer) { return (<LoadingSpinner />)}
-		// Add passer_rating each game object
+		// Add passer_rating to each game object
 		const games = currentPlayer.games.map(game => {
 			return Object.assign({}, game, {passer_rating:this.getPasserRating(game)}) 
 		})
@@ -39,7 +39,7 @@ export default class Player extends Component {
 			<div class="container h100">
 				<div class={`${style.profile} df aic`}>
 					<Link href="/players">&larr; Back</Link>
-					<img src={currentPlayer.img_url} />
+					{currentPlayer.hasOwnProperty('img_url') && (<img src={currentPlayer.img_url} />)}
 					<h1 class="f1">{currentPlayer.first_name} {currentPlayer.last_name} - Game Statistics</h1>
 				</div>
         <ReactTable
