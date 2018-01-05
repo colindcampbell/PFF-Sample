@@ -7,7 +7,6 @@ import LoadingSpinner from '../../components/loading'
 export default class Players extends Component {
 	render({ players, filter, loading }, {}) {
 		if (loading) {
-			// TODO: make a loading indicator
 			return (<LoadingSpinner />)
 		}
 		const matchesTextFilter = new RegExp(filter, "i")
