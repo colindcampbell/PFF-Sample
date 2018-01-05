@@ -26,6 +26,8 @@
     "linkstate": "^1.1.0",
     "preact": "^8.2.6",
     "preact-compat": "^3.17.0",
-    "preact-router": "^2.5.7"
+    "preact-router": "^2.5.7",
+    "react-table": "^6.7.6",
+    "shallow-compare": "^1.2.2"
   }
 }
