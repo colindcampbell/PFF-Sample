@@ -22,6 +22,7 @@ export default class Players extends Component {
 							<p>Born <strong>{player.date_of_birth}</strong></p>
 							<p>Drafted by the <strong>{drafted_by}</strong> in <strong>{player.draft_season}</strong></p>
 							<p>Selected <strong>#{player.draft_pick}</strong> in Round <strong>{player.draft_round}</strong>, draft type <strong>{player.draft_type}</strong></p>
+							<p class={style.link}>View Game Stats &rarr;</p>
 						</div>
 					</Link>))
 			}else{
