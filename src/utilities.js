@@ -1,19 +1,19 @@
 export function populateData (populatorArr,populateeArr,populateKey,destinationKey){
-	// reduce statistics to an object with player_id as the keys so that you only have to loop once
-	const reducedData = populatorArr.reduce((accum,item) => {
-		if (accum.hasOwnProperty(item[populateKey])) {
-			accum[item[populateKey]] = accum[item[populateKey]].concat(item)
-		}else{
-			accum[item[populateKey]] = [item]
-		}
-		return accum
-	},{})
-	// Add the games array to each player based on the player_id in the new reducedStatistics object
-	return populateeArr.reduce((accum,item) => {
-		if(!reducedData.hasOwnProperty(item[populateKey])) return accum
-		item[destinationKey] = reducedData[item[populateKey]]
-		return accum.concat(item)
-	},[])
+  // reduce statistics to an object with player_id as the keys so that you only have to loop once
+  const reducedData = populatorArr.reduce((accum,item) => {
+    if (accum.hasOwnProperty(item[populateKey])) {
+      accum[item[populateKey]] = accum[item[populateKey]].concat(item)
+    }else{
+      accum[item[populateKey]] = [item]
+    }
+    return accum
+  },{})
+  // Add the games array to each player based on the player_id in the new reducedStatistics object
+  return populateeArr.reduce((accum,item) => {
+    if(!reducedData.hasOwnProperty(item[populateKey])) return accum
+    item[destinationKey] = reducedData[item[populateKey]]
+    return accum.concat(item)
+  },[])
 }
 
 export function decimalAdjust(type, value, exp) {
@@ -40,9 +40,9 @@ export function decimalAdjust(type, value, exp) {
 }
 
 export function makeRound10(){
-	if (!Math.round10) {
-	  Math.round10 = function(value, exp) {
-	    return decimalAdjust('round', value, exp);
-	  };
-	}
+  if (!Math.round10) {
+    Math.round10 = function(value, exp) {
+      return decimalAdjust('round', value, exp);
+    };
+  }
 }

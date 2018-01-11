@@ -11,13 +11,12 @@ import { makeRound10 } from '../../utilities'
 
 export default class Player extends Component {
 	state = {
-		currentPlayer:null,
-		passerRatingSet:false
+		currentPlayer:null
 	}
 
 	componentDidMount() {
 		this.setCurrentPlayer(this.props)
-		// Used in the passer rating calculation
+		// Used for rounding the QB rating calculation
 		makeRound10()
 	}
 
